@@ -1,0 +1,158 @@
+* git clone https://github.com/stefanijAaA/SI_2022_lab1_206008.git -> бидејќи најпрво создаваме оддалечен репозиториум, со оваа наредба го клонираме локално
+* git add shopping_list.txt -> По креирање на текстуалната датотека и додавањето на 5 производи, со оваа команда тие промени одат во staging area и со следниот commit ќе бидат зачувани 
+* git commit -m "Add 5 items to the shopping list" -> Со оваа команда ги зачувуваме промените кои сме ги додале со git add
+* git add shopping_list.txt 
+* git commit -m "Add quantities to the items." 
+* git branch branch1
+                     -> Оваа команда ни креира 2 дополнителни гранки, и сега освен master гранката ги имаме и branch1 и branch2
+* git branch branch1
+* git log -> ги прикажува сите commits (логови) што сме ги направиле на репозиториумот
+
+8.) commit e4a63fd827aacee70d93820f31bb3184e9e2158e (HEAD -> master, branch2, branch1)
+Author: Stefanija Duracoska <sduracoska@gmail.com>
+Date:   Thu Mar 17 17:09:34 2022 +0100
+
+    Add quantities to the items.
+
+commit 4673f3e1598fe37bc8deb0b90e66d725aa8a228e
+Author: Stefanija Duracoska <sduracoska@gmail.com>
+Date:   Thu Mar 17 17:06:11 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit 6f5f28a24968b79226980d15025f9441863b7151 (origin/master, origin/HEAD)
+Author: Stefanija Duracoska <86681270+stefanijAaA@users.noreply.github.com>
+Date:   Thu Mar 17 16:48:58 2022 +0100
+
+    Update README.md
+
+commit 1283ce8c68176955e18a43f01eaff4018f238f18
+Author: Stefanija Duracoska <86681270+stefanijAaA@users.noreply.github.com>
+Date:   Thu Mar 17 16:48:05 2022 +0100
+
+    Initial commit
+
+* git push origin master  \
+* git push origin branch1  -> Со оваа команда ги додаваме сите локални промени кои сме ги направиле на оддалечениот репозиториум
+* git push origin branch2 /
+* git checkout branch1 -> Се префрламе од гранката master на гранката branch1 (може да се користи и git switch)
+* git add shopping_list.txt -> Додаваме промени кои ќе бидат зачувани со следниот commit, но овој пат во branch1
+* git commit -m "Change quantity of item #5" -> промените се зачувани во branch1
+* git checkout master -> Се префрламе од гранката branch1 на гранката master
+* git add shopping_list.txt
+                                          -> Ги додаваме и зачувуваме промените vo гранката master кои ги направивме во shopping_list.txт
+* git commit -m "Change quantity of item #2"
+* git push origin branch1
+			 -> Ги синхронизира гранките на кои направивме промена локално со оддалечениот репозиториум (само на овие две имавме промени)
+* git push origin master
+* git checkout branch2 -> Се префрламе од гранката master на гранката branch2
+* git add shopping_list.txt
+				->Ги додаваме и зачувуваме промените вo гранката branch2 кои ги направивме во shopping_list.txт
+* git commit -m "Modify item #4"
+* git log --all -> Ги прикажува сите commits (логови) што сме ги направиле на сите гранки до сега
+----------------------------------------------
+17.) commit d8a7a37a03f8d47e383297565dbae8bb51d959bf (HEAD -> branch2)
+Author: Stefanija Duracoska <sduracoska@gmail.com>
+Date:   Thu Mar 17 18:30:08 2022 +0100
+
+    Modify item #4
+
+commit 2c7d1dca5debcf5d38d5fcfe5b86672829dc5255 (origin/master, origin/HEAD, master)
+Author: Stefanija Duracoska <sduracoska@gmail.com>
+Date:   Thu Mar 17 18:10:24 2022 +0100
+
+    Change quantity of item #2
+
+commit 97aa2d21cd7c4b05067829015d56055194fe79fd (origin/branch1, branch1)
+Author: Stefanija Duracoska <sduracoska@gmail.com>
+Date:   Thu Mar 17 18:05:09 2022 +0100
+
+    Change quantity of item #5
+
+commit e4a63fd827aacee70d93820f31bb3184e9e2158e (origin/branch2)
+Author: Stefanija Duracoska <sduracoska@gmail.com>
+Date:   Thu Mar 17 17:09:34 2022 +0100
+
+    Add quantities to the items.
+
+commit 4673f3e1598fe37bc8deb0b90e66d725aa8a228e
+Author: Stefanija Duracoska <sduracoska@gmail.com>
+Date:   Thu Mar 17 17:06:11 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit 6f5f28a24968b79226980d15025f9441863b7151
+Author: Stefanija Duracoska <86681270+stefanijAaA@users.noreply.github.com>
+Date:   Thu Mar 17 16:48:58 2022 +0100
+
+    Update README.md
+
+commit 1283ce8c68176955e18a43f01eaff4018f238f18
+Author: Stefanija Duracoska <86681270+stefanijAaA@users.noreply.github.com>
+Date:   Thu Mar 17 16:48:05 2022 +0100
+
+    Initial commit
+----------------------------------------------
+
+* git add shopping_list.txt -> Ја додаваме 6тата ставка кај branch2
+* git commit --amend -m "Modify item #4 and add item #6" -> Последната промена се зачувува во рамки на последниот commit (не правиме нов commit) и порaката "Modify item #4" се заменува со "Modify item #4 and add item #6"
+* git log --all -> Ги прикажува сите commits (логови) што сме ги направиле на сите гранки до сега
+----------------------------------------------
+19.) commit 9278567623409f803915332466803634aa8d75b9 (HEAD -> branch2)
+Author: Stefanija Duracoska <sduracoska@gmail.com>
+Date:   Thu Mar 17 18:30:08 2022 +0100
+
+    Modify item #4 and add item #6
+
+commit 2c7d1dca5debcf5d38d5fcfe5b86672829dc5255 (origin/master, origin/HEAD, master)
+Author: Stefanija Duracoska <sduracoska@gmail.com>
+Date:   Thu Mar 17 18:10:24 2022 +0100
+
+    Change quantity of item #2
+
+commit 97aa2d21cd7c4b05067829015d56055194fe79fd (origin/branch1, branch1)
+Author: Stefanija Duracoska <sduracoska@gmail.com>
+Date:   Thu Mar 17 18:05:09 2022 +0100
+
+    Change quantity of item #5
+
+commit e4a63fd827aacee70d93820f31bb3184e9e2158e (origin/branch2)
+Author: Stefanija Duracoska <sduracoska@gmail.com>
+Date:   Thu Mar 17 17:09:34 2022 +0100
+
+    Add quantities to the items.
+
+commit 4673f3e1598fe37bc8deb0b90e66d725aa8a228e
+Author: Stefanija Duracoska <sduracoska@gmail.com>
+Date:   Thu Mar 17 17:06:11 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit 6f5f28a24968b79226980d15025f9441863b7151
+Author: Stefanija Duracoska <86681270+stefanijAaA@users.noreply.github.com>
+Date:   Thu Mar 17 16:48:58 2022 +0100
+
+    Update README.md
+
+commit 1283ce8c68176955e18a43f01eaff4018f238f18
+Author: Stefanija Duracoska <86681270+stefanijAaA@users.noreply.github.com>
+Date:   Thu Mar 17 16:48:05 2022 +0100
+
+    Initial commit
+----------------------------------------------
+
+* git checkout master -> Се префрламе од гранката branch2 кон гранката master
+* git merge branch1-> Гранката branch1 се спојува со гранката master
+----------------------------------------------
+20.) При спојување на гранката branch1 со гранката master не се случуваат конфликти, а спојувањето е извршено со рекурзивна стратегија.
+----------------------------------------------
+*git merge branch2 -> Гранката branch2 се спојува со гранката master
+----------------------------------------------
+21.) При спојување на гранката branch2 со master се јавува конфликт, конфликтот го разрешив на тој начин што рачно избрав кои промени да останат, а кои да се избришат, а потоа промените ги додадов со git add и ги зачував со git commit по што спојувањето беше успешно
+----------------------------------------------
+* git add 206008.txt 
+		     -> ја додаваме и зачувуваме оваа текстуална датотека
+* git commit -m "Add docs"
+* git push origin master
+			->Ги синхронизираме гранките на кои се извршија промени со оддалечениот репозиториум (кај branch1 нема промена, па така нема потреба )
+*git push origin branch2
